@@ -1,0 +1,182 @@
+html 
+.relative {
+    position: relative; /* Elemanı göreceli konumlandırır. */
+}
+
+.text-center {
+    text-align: center; /* Metni ortalar. */
+}
+
+.listnone {
+    list-style: none; /* Liste stilini kaldırır. */
+}
+
+.flex {
+    display: flex; /* Flexbox düzeni kullanır. */
+}
+
+a {
+    text-decoration: none; /* Bağlantının altını çizer. */
+}
+
+* {
+    margin: 0; /* Tüm elemanların dış kenar boşluğunu sıfırlar. */
+    padding: 0; /* Tüm elemanların iç kenar boşluğunu sıfırlar. */
+    box-sizing: border-box; /* Genişlik ve yükseklik hesaplamalarına iç kenar boşluklarını dahil eder. */
+}
+
+/* colors */
+.color_black {
+    color: black; /* Metin rengini siyah yapar. */
+}
+
+.color_green {
+    color: #669A00; /* Metin rengini yeşil yapar. */
+}
+
+.color_blue {
+    color: #ff0b0b; /* Metin rengini kırmzı yapar. */
+}
+
+.gri_fon {
+    background-color: #f7f7f7; /* Arka plan rengini açık gri yapar. */
+}
+
+.beyaz_fon {
+    background-color: white; /* Arka plan rengini beyaz yapar. */
+}
+
+/* Navigasyon için */
+nav {
+    display: flex; /* Flexbox düzeni kullanır. */
+    justify-content: space-between; /* Elemanları aralarında boşluk olacak şekilde yerleştirir. */
+    text-align: center; /* Metni ortalar. */
+    width: 100%; /* Tam genişlik alır. */
+    background: #fff; /* Arka plan rengini beyaz yapar. */
+    padding: 15px 30px; /* İç boşluk ekler. */
+}
+
+.icon {
+    font-size: 35px; /* İkonun yazı boyutunu belirler. */
+    font-weight: 500; /* İkonun kalınlığını ayarlar. */
+    color: black; /* İkon rengini siyah yapar. */
+    cursor: pointer; /* Fare ile üzerine gelindiğinde tıklanabilir olduğunu gösterir. */
+}
+
+nav ol {
+    display: flex; /* Flexbox düzeni kullanır. */
+    list-style: none; /* Liste stilini kaldırır. */
+    margin: auto 0; /* Dikey olarak ortalar. */
+}
+
+nav ol li {
+    margin: 0 8px; /* Elemanlar arasında yatay boşluk bırakır. */
+}
+
+nav ol li .ilanver {
+    color: #fff; /* Metin rengini beyaz yapar. */
+    display: inline-block; /* Elemanı satır içi blok olarak gösterir. */
+    width: 140px; /* Genişliği 140 piksel yapar. */
+    background: #649900; /* Arka plan rengini yeşil yapar. */
+    padding: 10px; /* İç boşluk ekler. */
+    border-radius: 20px; /* Kenarları yuvarlar. */
+    font-size: 0.8rem; /* Yazı boyutunu ayarlar. */
+    text-transform: capitalize; /* İlk harfi büyük yapar. */
+} 
+
+nav ol li ul li .dropdown-content {
+    display: none; /* Dropdown içeriğini başlangıçta gizler. */
+    position: absolute; /* Elemanı mutlak konumlandırır. */
+    height: 20px; /* Yüksekliği 20 piksel yapar. */
+    width: 150px; /* Genişliği 150 piksel yapar. */
+    background-color: white; /* Arka plan rengini beyaz yapar. */
+    z-index: 1; /* Diğer elemanların üzerinde görünmesini sağlar. */
+    top: 20px; /* Üstten 20 piksel aşağıda başlar. */
+    left: 10px; /* Soldan 10 piksel içeride başlar. */
+    text-align: left; /* Metni sola hizalar. */
+}
+
+nav ol li ul .dropdown-content a {
+    color: black; /* Bağlantı rengini siyah yapar. */
+    width: 100%; /* Genişliği %100 yapar. */
+}
+
+nav ol li ul li:hover .dropdown-content {
+    display: block; /* Üzerine gelindiğinde dropdown içeriğini gösterir. */
+}
+
+nav ol li ul .profil {
+    color: black; /* Profil metninin rengini siyah yapar. */
+    letter-spacing: 1px; /* Harfler arasında boşluk bırakır. */
+}
+
+nav .search_box {
+    display: flex; /* Flexbox düzeni kullanır. */
+    margin: auto 0; /* Dikey olarak ortalar. */
+    height: 35px; /* Yüksekliği 35 piksel yapar. */
+    line-height: 35px; /* Satır yüksekliğini ayarlar. */
+    position: relative; /* Elemanı göreceli konumlandırır. */
+}
+
+nav .search_box input {
+    border: none; /* Kenarları kaldırır. */
+    outline: none; /* Odaklanıldığında çerçeve çizmez. */
+    background: #eeeeee; /* Arka plan rengini açık gri yapar. */
+    height: 100%; /* Yüksekliği %100 yapar. */
+    width: 400px; /* Genişliği 400 piksel yapar. */
+    padding: 0 10px; /* İç boşluk ekler. */
+    font-size: 0.8rem; /* Yazı boyutunu ayarlar. */
+    border-radius: 20px; /* Kenarları yuvarlar. */
+}
+
+nav .search_box button {
+    color: black; /* Buton metninin rengini siyah yapar. */
+    background: #FCB600; /* Arka plan rengini sarı yapar. */
+    font-size: 20px; /* Yazı boyutunu ayarlar. */
+    height: 100%; /* Yüksekliği %100 yapar. */
+    padding: 8px; /* İç boşluk ekler. */
+    position: absolute; /* Elemanı mutlak konumlandırır. */
+    top: 0; /* Üstten sıfırdan başlar. */
+    right: 0; /* Soldan sıfırdan başlar. */
+    cursor: pointer; /* Fare ile üzerine gelindiğinde tıklanabilir olduğunu gösterir. */
+    z-index: 1; /* Diğer elemanların üzerinde görünmesini sağlar. */
+    border-radius: 50%; /* Kenarları yuvarlar. */
+}
+
+nav .search_box button:hover {
+    color: #fff; /* Üzerine gelindiğinde metin rengini beyaz yapar. */
+}
+
+nav .search_box button::after {
+    height: 100%; /* Yüksekliği %100 yapar. */
+    width: 0%; /* Başlangıçta genişliği sıfırdır. */
+    border-radius: 50%; /* Kenarları yuvarlar. */
+    content: ""; /* İçerik ekler. */
+    background: #649900; /* Arka plan rengini yeşil yapar. */
+    position: absolute; /* Elemanı mutlak konumlandırır. */
+    top: 0; /* Üstten sıfırdan başlar. */
+    right: 0; /* Soldan sıfırdan başlar. */
+    z-index: -1; /* Diğer elemanların arkasında görünmesini sağlar. */
+    transition: 0.1s; /* Geçiş süresini ayarlar. */
+}
+
+nav .search_box button:hover::after {
+    width: 100%; /* Üzerine gelindiğinde genişliği %100 yapar. */
+}
+
+/* Font boyutları */
+.xs_size {
+    font-size: 0.8rem; /* Küçük boyut için yazı boyutu. */
+}
+
+.s_size {
+    font-size: 1rem; /* Standart boyut için yazı boyutu. */
+}
+
+.m_size {
+    font-size: 1.3rem; /* Orta boyut için yazı boyutu. */
+}
+
+.l_size {
+    font-size: 1.5rem; /* Büyük boyut için yazı boyutu. */
+}

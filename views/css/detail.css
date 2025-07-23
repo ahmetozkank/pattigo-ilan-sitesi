@@ -1,0 +1,386 @@
+
+     body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f4f8;
+        color: #333;/*yazı rengi*/
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        height: 600px;
+        margin: 70px auto;
+        max-width: 1500px;
+        gap: 20px;
+    }
+
+    .section {
+        flex: 0 0 70%;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeIn 0.5s;
+    }
+
+    .imgcontainer {
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        margin-bottom: 15px;
+        cursor: pointer; /* İşaretçi değişimi */
+        transition: transform 0.3s;
+    }
+
+    .imgcontainer:hover {
+        transform: scale(1.05);
+    }
+
+    .imgcontainer img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 15px;
+        max-height: 400px; /* Resmin yüksekliğini artır */
+        object-fit: cover; /* Resmin kesilmeden kutuya sığması */
+    }
+/*foto ayarı*/
+    .details {
+        text-align: center;
+        padding: 15px;
+    }
+
+    .product-title {
+    font-size: 1.8em;
+    color: #FF4500; /* Sıcak ve enerjik turuncu renk */
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+    transition: color 0.3s, transform 0.3s; /* Hover etkisi için geçiş */
+    }
+
+    .product-title:hover {
+        color: #FF6347; /* Hafif bir renk değişikliği */
+        transform: scale(1.08); /* Başlığı büyütme */
+    }
+    
+/*şehir ksımının */
+
+    .info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+    font-size: 1em;
+    color: #666;
+    font-weight: bold;
+    background-color:rgb(255, 238, 238); /* Yumuşak krem arka plan */
+    border-radius: 15px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    transition: background-color 0.3s; /* Arka plan değişikliği için geçiş */
+
+    }
+    .info:hover {
+    background-color: #FFE4C4; /* Hover’da yumuşak geçişli krem rengi */
+}
+
+ /* Şehir ve Yaş Tasarımı */
+/* Yaş ve Şehir Tasarımı */
+.location, .age {
+    display: inline-block;
+    color: #5A4C42; /* Sıcak kahve tonu */
+    font-size: 0.95em;
+    font-weight: bold;
+    text-transform: uppercase; /* Büyük harf */
+    margin: 0 10px; /* İki bilgi arasında mesafe */
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.location:hover, .age:hover {
+    color: #FF7A50; /* Hover'da canlı vurgu rengi */
+}
+/*ordu yaş kısmı*/
+.location::after, .age::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    background-color: #FF7A50; /* Alt çizgi için vurgu rengi */
+    transform: scaleX(0); /* Başlangıçta görünmez */
+    transition: transform 0.3s ease;
+}
+
+.location:hover::after, .age:hover::after {
+    transform: scaleX(1); /* Hover'da çizgi görünür olur */
+}
+
+
+    .description-container {
+    margin-left: 25px; /* Kutuyu sağa kaydırmak için soldan boşluk */
+    margin-top: 0.5px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    width: 190%; /* Genişliği artırarak sağa doğru yayılma */
+    max-width: none;
+    display: inline-block;
+}
+
+.description-container p {
+    white-space: normal;
+    overflow-wrap: break-word;
+    font-size: 1.7em;
+    line-height: 1.6;
+}
+
+
+
+    .description-container:hover {
+        background-color: #dee2e6;
+    }
+
+    .aside {
+        flex: 0 0 25%;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        transition: transform 0.3s;
+    }
+
+    .aside:hover {
+        transform: scale(1.02);
+    }
+/*hayvan sahip bilgileri*/
+    .info-section {
+        margin-bottom: 20px;
+        transition: background-color 0.3s;
+        border-radius: 10px;
+        height: 800px;
+        padding: 10px;
+        background-color: #f8f9fa;/*hayvan sahip bilgileri*/
+    }
+
+    .info-section:hover {
+        background-color: #e9ecef;
+    }
+
+    .aside-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 1.8em;/* başlıkların büyüklüğü  açıklama sahip hayvan*/
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 5px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 8px;
+        font-size: 1.35rem; /* kimden ırk alt başlıkların büyüklüüü */
+    }
+
+    .location {
+        color: red;
+    }
+
+    .age {
+        color: red;
+        font-weight: bold;
+    }
+
+    .alert {
+        background-color: #ffebcc;
+        border: 1px solid #ffcc00;
+        padding: 15px;
+        border-radius: 10px;
+        color: #856404;
+        margin: 10px 0;
+        animation: fadeIn 0.5s;
+    }
+
+    /* Modal Stilleri */
+    .modal {
+        display: none; /* Modal başlangıçta gizli (görünmez) */
+        position: fixed; /* Modal ekranın sabit bir konumunda olacak, kaydırılamaz */
+        z-index: 1000; /* Modal'ın diğer öğelerin üzerinde görünmesini sağlar */
+        left: 0; /* Modal'ı ekranın sol kenarına yerleştirir */
+        top: 0; /* Modal'ı ekranın üst kenarına yerleştirir */
+        width: 100%; /* Modal ekranın tamamını kaplar (genişlik) */
+        height: 100%; /* Modal ekranın tamamını kaplar (yükseklik) */
+        overflow: auto; /* Modal içinde taşan içerik kaydırılabilir */
+        background-color: rgba(0, 0, 0, 0.8); /* Modal'ın arka plan rengini yarı saydam siyah yapar */
+    }
+
+    .modal-content {
+        position: absolute; /* Konumu sabitler ve ekranın ortalanmasını sağlar */
+        top: 50%; /* Ekranın tam ortasında başlar */
+        left: 50%; /* Ekranın sol kenarından %50 uzaklıkta başlar */
+        transform: translate(-50%, -50%); /* Resmi tam ortalar */
+        display: block; /* Resmin tam olarak görünmesini sağlar */
+        width: auto; /* Resmin genişliğini otomatik olarak ayarlar */
+        max-width: 100%; /* Resmin maksimum genişliğini %100 yapar, böylece ekranı aşmaz */
+        max-height: 90%; /* Resmin maksimum yüksekliğini %90 yapar, böylece ekranı aşmaz */
+        border-radius: 10px; /* Resmin köşelerini yuvarlar */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Modal'a hafif bir gölge ekler */
+        object-fit: contain; /* Resmin orantılı olarak sığmasını sağlar */
+        transition: transform 0.25s ease; /* Yakınlaştırma sırasında animasyon sağlar */
+        transform-origin: center center; /* Zoom işlemi merkezden yapılır */
+    }
+
+    .close {
+        position: absolute; /* Kapatma butonunu modal içinde sabitler */
+        top: 15px; /* Kapatma butonunu üstten 15px kadar uzaklaştırır */
+        right: 35px; /* Kapatma butonunu sağdan 35px kadar uzaklaştırır */
+        color: #fff; /* Kapatma butonunun rengini beyaz yapar */
+        font-size: 40px; /* Kapatma butonunun yazı boyutunu 40px yapar */
+        font-weight: bold; /* Kapatma butonunun yazı tipini kalın yapar */
+        cursor: pointer; /* Fareyle üzerine gelindiğinde el simgesi görünür */
+    
+    }
+
+/* Mobil için responsive ayarlar */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column !important;
+        height: auto;
+        margin: 20px 10px;
+        gap: 15px;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        overflow: visible;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .imgcontainer {
+        max-height: 300px;
+        margin-bottom: 10px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        border-radius: 10px;
+        order: 1; /* Foto üstte */
+    }
+
+    .imgcontainer img {
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .product-title {
+        font-size: 1.6em;
+        text-align: center; /* Ortala */
+        margin-bottom: 10px;
+        order: 2; /* Foto altı */
+        color: #FF4500;
+        font-weight: bold;
+    }
+
+    .description-container {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+        font-size: 1.1em;
+        order: 99; /* Açıklama en altta */
+    }
+ .info {
+        display: flex;
+        gap: 15px;
+        padding: 10px 5px;
+        font-size: 0.9em;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 6px 12px;
+        border-radius: 20px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        color: #5A4C42;
+        font-weight: 600;
+        cursor: default;
+        white-space: nowrap;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .info-item:hover {
+        background-color: #FF7A50;
+        color: white;
+    }
+
+    .info-icon {
+        margin-right: 8px;
+        font-size: 1.2em;
+        color: #FF7A50;
+        flex-shrink: 0;
+    }
+
+
+    .aside {
+        flex: 1 1 100%;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .info-section {
+        height: auto;
+        padding: 15px;
+    }
+
+    ul li {
+        font-size: 1.1rem;
+    }
+
+    /* Modal kapatma butonu küçülsün mobilde */
+    .close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}

@@ -1,0 +1,537 @@
+
+/* Genel ayarlar */
+body {
+    font-family: Arial, sans-serif; /* Sayfa genelinde kullanılacak yazı tipi */
+    margin: 0; /* Sayfanın dış kenar boşluğunu kaldırır */
+    padding: 0; /* Sayfanın iç kenar boşluğunu kaldırır */
+    background-color: #f0f2f5; /* Yumuşak gri arka plan rengi */
+    color: #333; /* Ana metin rengi */
+
+}
+
+/* Konteyner */
+
+.container {
+    display: flex; /* İçerik düzeni için esnek kutu düzeni kullanılıyor */
+    gap: 25px; /* Sütunlar arası boşluk */
+    padding: 20px; /* Konteynerin etrafına boşluk ekliyor */
+    margin-left: 370px; /* Yan çubuğun genişliği kadar boşluk bırakır (350px + 20px padding) */
+}
+
+/* Yan çubuk */
+/* Yan Çubuk */
+/* Yan çubuk */
+.sidebar {
+    background-color: #ffffff; /* Yan çubuğun arka plan rengi */
+    padding: 20px; /* Yan çubuğun iç boşluğu */
+    border-radius: 10px; /* Yan çubuğun köşelerini yuvarlar */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Yan çubuğa gölge efekti ekler */
+    width: 350px; /* Yan çubuğun sabit genişliği */
+    height: calc(90vh - 80px); /* Ekranın tamamını kapsar, navbar yüksekliğini de çıkarır */
+    box-sizing: border-box; /* Kenar boşluklarının genişliği etkilemesini önler */
+    position: fixed; /* Sayfanın soluna sabitler */
+    top: 113px; /* Sayfanın üst kısmından 80px boşluk bırakır, navbar'dan aşağıya başlar */
+    left: 0; /* Sayfanın en soluna yapışır */
+    overflow-y: auto; /* İçeriğin taşması durumunda kaydırma çubuğu ekler */
+    z-index: 1000; /* Yan çubuğun diğer içeriklerin önünde görünmesini sağlar */
+}
+
+
+
+
+.sidebar h3 {
+    
+    color: orange; /* Başlık rengi */
+    font-weight: bold; /* Başlık yazı tipi kalın */
+    font-size: 1.9em; /* Başlık boyutu */
+    margin-bottom: 0px; /* Başlığın altındaki boşluk */
+}
+
+.sidebar ul {
+    font-size: 20px;
+    list-style: none; /* Liste işaretlerini kaldırır */
+    padding: 12px; /* Liste içindeki boşluğu kaldırır */
+}
+
+.sidebar ul li {
+    margin-bottom: 15px; /* Liste elemanları arasındaki boşluk */
+}
+
+.sidebar ul li a {
+    text-decoration: none; /* Bağlantının alt çizgisini kaldırır */
+    color: #007bff; /* Bağlantı rengi */
+    padding: 8px; /* Bağlantı içindeki boşluk */
+    display: block; /* Bağlantıyı blok eleman yapar */
+    border-radius: 5px; /* Bağlantının köşelerini yuvarlar */
+    transition: all 0.3s ease; /* Geçiş animasyonu */
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff; /* Fare ile üzerine gelindiğinde bağlantı rengi beyaz olur */
+    background-color: #007bff; /* Fare ile üzerine gelindiğinde arka plan rengi mavi olur */
+}
+
+/* Ürün kartları */
+.product-grid {
+    display: grid; /* Ürün kartları için grid düzeni */
+    gap: 25px; /* Kartlar arası boşluk */
+    grid-template-columns: repeat(4, 1fr); /* Her satırda 4 ilan */
+}
+
+.product-card {
+    background-color: #ffffff; /* ilanların arka plan rengi */
+    border-radius: 8px; /* ilanların köşelerini yuvarlar */
+    overflow: hidden; /* Taşan içeriği gizler */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş animasyonu */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* ilan gölge efekti ekler */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* ilan fare ile üzerine gelindiğinde yukarı hareket eder */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Ürün kartı üzerine gelindiğinde gölge etkisi artar */
+}
+
+.img-container img {
+    width: 100%; /* Resmin genişliği %100 olur */
+    height: auto; /* Resmin yüksekliği orantılı olarak ayarlanır */
+}
+
+.product-details {
+    padding: 15px; /* Ürün detaylarının iç boşluğu */
+}
+
+.product-details h4 {
+    margin: 0 0 5px; /* Başlığın üstündeki ve altındaki boşluk */
+    font-size: large;
+    color: red; /* Başlık rengi */
+}
+
+.product-details .owner {
+    color: #666; /* Sahip ismi rengi */
+    font-size: 1.0em; /* Sahip isminin yazı boyutu */
+    margin: 8px 0; /* Sahip isminin üstündeki ve altındaki boşluk */
+}
+
+/* Şehir ve yaş kısımları */
+.product-details .info {
+    display: flex; /* Şehir ve yaş bilgileri yan yana dizilir */
+    justify-content: space-between; /* Alanı eşit şekilde dağıtır */
+    align-items: center;
+    font-size: 0.95em; /* Bilgilerin yazı boyutu */
+}
+
+.product-details .info span {
+    color: #333;
+    background-color: #e9ecef; /* Şehir ve yaş bilgisi arka plan rengi */
+    padding: 5px 10px; /* Bilgilerin iç boşluğu */
+    border-radius: 5px; /* Bilgilerin köşelerini yuvarlar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bilgilerin gölge efekti */
+    transition: background-color 0.3s ease; /* Geçiş animasyonu */
+}
+
+.product-details .info span:hover {
+    background-color: #d1d1d1; /* Fare ile üzerine gelindiğinde arka plan rengi değişir */
+}
+
+/* Uyarı mesajı */
+.alert {
+    font-size: 23px;
+    padding: 2px; /* Uyarı mesajının iç boşluğu */
+    background-color: none; /* Uyarı mesajının arka plan rengi */
+    color: #d9534f; /* Uyarı mesajının metin rengi */
+    border-radius: 5px; /* Uyarı mesajının köşelerini yuvarlar */
+    margin: 10px 1; /* Uyarı mesajının üstündeki ve altındaki boşluk */
+}
+.city-select {
+    width: 100%; /* Genişliği tam kaplar */
+    padding: 12px; /* İç boşluk (yüksekliği artırır) */
+    font-size: 18px; /* Yazı boyutu büyük */
+    border-radius: 8px; /* Kenarları yuvarlat */
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    color: #333; /* Yazı rengi */
+    cursor: pointer; /* İmleci işaretçi yap */
+    transition: all 0.3s ease; /* Hover efektleri için geçiş animasyonu */
+}
+.city-select:hover {
+    color: black; /* Yazı rengi beyaz */
+}
+.price-filter input {
+    width: 100%; /* Genişliği tam kaplar */
+    padding: 12px; /* İç boşluk (yüksekliği artırır) */
+    font-size: 18px; /* Yazı boyutu büyük */
+    border-radius: 8px; /* Kenarları yuvarlat */
+    border-width: 1px;
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    color: #333; /* Yazı rengi */
+    cursor: pointer; /* İmleci işaretçi yap */
+    transition: all 0.3s ease; /* Hover efektleri için geçiş animasyonu */
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+/* Cinsiyet Seçimi */
+.gender-filter {
+    margin-top: 20px;
+    font-size: 1.2rem; /* Yazı boyutunu büyütme */
+    font-weight: none; /* Yazıyı kalın yapma */
+}
+
+.gender-select {
+    width: 100%; /* Genişliği tam kaplar */
+    padding: 12px; /* İç boşluk (yüksekliği artırır) */
+    font-size: 18px; /* Yazı boyutu büyük */
+    border-radius: 8px; /* Kenarları yuvarlat */
+    background-color: #f9f9f9; /* Hafif gri arka plan */
+    color: #333; /* Yazı rengi */
+    cursor: pointer; /* İmleci işaretçi yap */
+    transition: all 0.3s ease; /* Hover efektleri için geçiş animasyonu */
+}
+
+.gender-select:focus {
+    outline: none; /* Seçim kutusu odaklandığında kenarlık yerine gölge ekler */
+
+}
+
+.gender-select option {
+    padding: 10px;
+    font-size: 1.1rem; /* Seçeneklerin yazı boyutunu büyütme */
+}
+input::placeholder {
+    color: #333; /* Placeholder rengini siyah yapar */
+    /* Placeholder yazısını kalın yapar (isteğe bağlı) */
+    opacity: 1; /* Tam görünürlük sağlar */
+}
+/* Seçilen Filtreler Alanı */
+.filter-summary {
+    width: 290px; /* Filtre kutusunun genişliği */
+    margin-top: 0px; /* Üstten boşluk eklemek için */
+    margin-left: 0px; /* Sidebar'a yapışık olması için soldan boşluk sıfırlandı */
+    padding-top: 15px;
+    border-top: 3px solid #007bff; /* Daha belirgin bir üst kenarlık */
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1; /* Daha açık bir arka plan */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    top: 0px; /* Sidebar'ın üst kısmına yapışık olsun */
+    left: 0px; /* Sidebar ile aynı hizada olması için */
+    z-index: 1000; /* Diğer elementlerin üstünde olmasını sağlar */
+}
+
+
+
+.filter-summary h3 {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #007bff; /* Başlık rengini belirgin yapalım */
+    text-transform: uppercase; /* Başlık büyük harflerle */
+    letter-spacing: 1px; /* Başlık harf aralıklarını açalım */
+}
+
+.filter-summary ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-summary li {
+    font-size: 20px;
+    color: #333;
+    padding: 1px 0;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-summary li:last-child {
+    border-bottom: none;
+}
+
+.remove-filter {
+    background-color: #ff4d4d; /* Kırmızı renk, dikkat çekici */
+    color: white; /* Beyaz yazı rengi */
+    border-radius: 12px; /* Yuvarlatılmış köşeler */
+    padding: 2px 3px; /* Yatay ve dikey padding */
+    font-size: 16px; /* Font büyüklüğünü artırdık */
+    cursor: pointer; /* Farenin üzerine gelince pointer işareti */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Yumuşak geçiş efekti */
+    border: 2px solid #ff4d4d; /* Kırmızı sınır */
+}
+
+.remove-filter:hover {
+    background-color: #ff1a1a; /* Hover efekti, daha koyu kırmızı */
+    transform: scale(1.1); /* Hoverda buton biraz büyür */
+    text-decoration: none; /* Metin altı çizilmesin */
+}
+
+.filter-summary .no-filters {
+    font-size: 16px;
+    color: #999;
+    padding: 15px 0;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.filter-summary .filter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-summary .filter-item span {
+    font-weight: bold;
+    color: #333;
+    font-size: 16px; /* Yazı tipini biraz büyütelim */
+}
+
+.filter-summary .filter-item .remove-filter {
+    font-size: 14px;
+    color: #ff4d4d;
+    cursor: pointer;
+}
+
+.filter-summary .filter-item .remove-filter:hover {
+    color: #e60000;
+}
+
+    .category-list {
+        display: flex; /* Kategorilerin yatay yerine dikey olarak sıralanmasını sağlar. */
+        flex-direction: column; /* Kategoriler dikey sıralanır. */
+        gap: 10px; /* Kategoriler arasında 10px boşluk bırakır. */
+    }
+
+    .category-item {
+        padding: 10px; /* Kategori öğesinin iç kısmına 10px boşluk ekler. */
+        border: 0.5px solid gray; /* Kategori öğesinin etrafında 1px gri kenarlık ekler. */
+        border-radius: 8px; /* Kategori öğesinin köşelerini yuvarlatır. */
+        background-color: #f9f9f9; /* Kategori öğesinin arka plan rengini açık gri yapar. */
+    }
+
+    .category-link {
+        font-size: 25px; /* Bağlantının yazı boyutunu 18px yapar. */
+        color: #333; /* Bağlantının rengini koyu gri yapar. */
+        
+        text-decoration: none; /* Bağlantının altını çizmez. */
+    }
+
+    .category-link:hover {
+        color: #007bff; /* Bağlantının üzerine gelindiğinde rengini mavi yapar. */
+    }
+
+    .breed-list {
+        padding-left: 20px; /* ırk listesine 20px sol iç boşluk ekler. */
+        margin-top: 8px; /* ırk listesi öğelerinin üst kısmına 8px boşluk ekler. */
+    }
+
+    .breed-list li {
+        list-style-type: none; /* Liste öğelerinin başına simge eklenmesini engeller. */
+        margin: 5px 0; /* Liste öğeleri arasında 5px üst ve alt boşluk bırakır. */
+    }
+
+    .breed-list a {
+        text-decoration: none; /* Bağlantının altını çizmez. */
+        color: #555; /* Bağlantının rengini gri yapar. */
+    }
+
+    .breed-list a:hover {
+        color: #007bff; /* Bağlantının üzerine gelindiğinde rengini mavi yapar. */
+    }
+
+
+
+/* Dokunmatik cihazlar için hover kaldır, dokunmatik kolaylığı */
+@media (hover: none) and (pointer: coarse) {
+    .product-card:hover,
+    .sidebar ul li a:hover,
+    .city-select:hover,
+    .price-filter input:hover,
+    .gender-select:hover {
+        background-color: transparent !important;
+        color: inherit !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .sidebar ul li a,
+    .city-select,
+    .price-filter input,
+    .gender-select {
+        padding: 16px 20px;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        box-shadow: none !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    /* Masaüstü varsayılan stilleriniz burada olsun */
+
+/* Tablet (max 1024px) */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        margin-left: 0;
+        padding: 15px;
+    }
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: 0;
+        box-shadow: none;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        overflow-y: visible;
+        padding: 15px;
+    }
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .filter-summary {
+        width: 100%;
+        padding: 20px;
+        box-shadow: none;
+        border-top: 3px solid #007bff;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+    .sidebar h3 {
+        font-size: 1.6em;
+    }
+}
+/* Mobil telefonlar (max 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        padding: 10px;
+        margin-left: 0;
+        flex-direction: column;
+        position: relative;
+        z-index: 1; /* Arka planda kalması için */
+    }
+    .sidebar {
+        padding: 10px;
+        border-radius: 0;
+        margin-bottom: 15px;
+        box-shadow: none;
+    }
+    .sidebar h3 {
+        font-size: 1.3em;
+        color: orange;
+        font-weight: bold;
+    }
+    .sidebar ul {
+        font-size: 16px;
+        padding: 0;
+    }
+    .sidebar ul li {
+        margin-bottom: 12px;
+    }
+    .sidebar ul li a {
+        padding: 14px 10px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        display: block;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .product-card {
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .product-details h4 {
+        font-size: 1.2rem;
+        color: red;
+    }
+    .product-details .owner {
+        font-size: 1rem;
+    }
+    .product-details .info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 0.9rem;
+    }
+    .product-details .info span {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    .filter-summary {
+        padding: 15px;
+        font-size: 14px;
+        border-radius: 6px;
+        position: relative; /* z-index için pozisyon gerekiyor */
+        z-index: 2; /* Sayfanın arka planından önde ama üst katmanların altında */
+     background-color: #fafafa; /* Çok açık gri-beyaz, çok hafif renk farkı */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Çok hafif gölge ile biraz derinlik */
+    }
+    .filter-summary h3 {
+        font-size: 18px;
+    }
+    .city-select,
+    .price-filter input,
+    .gender-select {
+        font-size: 16px;
+        padding: 14px 12px;
+        border-radius: 8px;
+    }
+
+    .product-card:hover,
+    .sidebar ul li a:hover,
+    .city-select:hover,
+    .price-filter input:hover,
+    .gender-select:hover {
+        background-color: transparent !important;
+        color: inherit !important;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .sidebar ul li a,
+    .city-select,
+    .price-filter input,
+    .gender-select {
+        padding: 16px 20px;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        box-shadow: none !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+}

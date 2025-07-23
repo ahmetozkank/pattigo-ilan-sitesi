@@ -1,0 +1,173 @@
+/* Body, sayfa yüksekliğine tam oturacak şekilde ayarla, ortala ve arka plan rengi bir geçiş */
+body {
+  height: 100vh;
+  display: flex; /* İçeriği dikey ve yatay ortalar grid yapınca istediğin yere taşı */
+  align-items: center;
+  justify-content: center; /* sağ sol yapma */
+  margin: 0;
+  background: linear-gradient(145deg, #ffdf85, #ffd447, #e39b00); /*  geçişli arka plan rengi */
+  font-family: 'Roboto', sans-serif; /* Font seçimi */
+}
+
+/* Giriş formu için kapsayıcı */
+.container_login {
+  width: 100%; /* Genişlik */
+  max-width: 400px; /* Maksimum genişlik */
+  padding: 45px;
+  background: #fff7e6; /* Arka plan rengi */
+  border-radius: 20px; /* Köşeleri yuvarlatır */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Gölge efekti */
+  border: 3px solid #e39b00; /* Dış kenar sınırı */
+  transition: transform 0.3s ease; /* Hover'da dönüşüm geçişi */
+  text-align: center; /* İçerik ortalanır */
+  font-size: 3rem;   
+  color: rgb(0, 0, 0);        /* Yazı rengi */
+  margin-bottom: 10px;               /* Alt boşluk kaldırıldı */
+  padding-top: 10px;                 /* Üst boşluk kaldırıldı */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+/* Kapsayıcı üzerine gelindiğinde hafifçe büyür */
+.container_login:hover {
+  transform: scale(1.02); /* Biraz büyütme efekti */
+}
+
+/* İçeriği ortalamak için kullanılan ekstra bir kapsayıcı */
+.container_login .center {
+  padding: 20px;
+}
+
+
+/* Form alanları için genel stil */
+.txt_field {
+  margin: 20px 0;
+  position: relative; /* Input etiketlerinin konumlandırılmasını sağlamak için relative */
+}
+
+/* Input alanı */
+.txt_field input {
+  width: 100%; /* Tam genişlikte */
+  padding: 12px 0;
+  font-size: 1.1rem; /* Yazı boyutu */
+  border: none;
+  border-bottom: 2px solid #adadad; /* Alt kenar çizgisi */
+  outline: none;
+  background: transparent; /* Arka plan şeffaf */
+}
+
+/* Label, input'un içinde sabit kalacak */
+.txt_field label {
+  position: absolute; /* Etiketi input içinde konumlandırır */
+  top: -10px; /* Yukarıda sabit durur */
+  left: 1px; /* Soldan boşluk */
+  color: #e39b00; /* Etiket rengi */
+  font-size: 0.9rem; /* Yazı boyutu */
+}
+
+/* Input alanına odaklanıldığında veya dolu olduğunda etiketin yeri */
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+  top: 10%; /* Etiketi yukarıda sabitler */
+  font-size: 0.9rem; /* Yazı boyutu */
+  color: #e39b00; /* Etiket rengi değişir */
+}
+
+/* Şifremi unuttum bağlantısı */
+.pass {
+  color: #d68f00; /* Renk */
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-align: left;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Şifremi unuttum üzerine gelindiğinde */
+.pass:hover {
+  text-decoration: underline; /* Altı çizilir */
+}
+
+/* Gönderme butonu */
+input[type="submit"] {
+  width: 100%; /* Tam genişlik */
+  height: 50px;
+  border: none;
+  background: #e39b00; /* Arka plan rengi */
+  color: white; /* Yazı rengi */
+  font-size: 0.9rem;
+  border-radius: 25px; /* Köşeleri yuvarlatır */
+  cursor: pointer;
+  transition: background 0.3s ease; /* Hover'da renk geçişi */
+}
+
+/* Gönderme butonuna gelindiğinde arka plan rengi değişir */
+input[type="submit"]:hover {
+  background: #d68f00;
+}
+
+/* Kayıt ol bağlantısı için genel stil */
+.signup_link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666666; /* Yazı rengi */
+}
+
+/* Kayıt ol bağlantısının rengi */
+.signup_link a {
+  color: #e39b00;
+  text-decoration: none; /* Altı çizilmez */
+}
+
+/* Kayıt ol bağlantısına gelindiğinde altı çizilir */
+.signup_link a:hover {
+  text-decoration: underline;
+}
+.error-message {
+  color: #fff;
+  background-color: #f44336;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.success-message {
+  color: #fff;
+  background-color: #4CAF50;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+}
+   /* Uyarı mesajı stili */
+   .alert {
+    background-color: #f8d7da; /* Arka plan rengini kırmızımsı soluk yap */
+    color: #721c24; /* Metin rengini koyu kırmızı yap */
+    border: 1px solid #f5c6cb; /* Kenarlık rengini açık kırmızı yap */
+    padding: 10px; /* İçerideki boşluğu ayarla */
+    margin-bottom: 20px; /* Alt boşluk ekle */
+    border-radius: 5px; /* Kenarları yuvarlat */
+    font-size: 16px; /* Yazı boyutunu ayarla */
+    text-align: center; /* Metni ortala */
+}
+
+/* Alert mesajları için özel stil (danger durumu) */
+.alert-danger {
+    background-color: #f8d7da; /* Arka plan rengini kırmızımsı soluk yap */
+    color: #721c24; /* Metin rengini koyu kırmızı yap */
+    border-color: #f5c6cb; /* Kenarlık rengini açık kırmızı yap */
+}
+
+/* Alert mesajlarındaki bağlantılar için stil */
+.alert-danger a {
+    color: #721c24; /* Bağlantı rengini koyu kırmızı yap */
+    text-decoration: underline; /* Bağlantıyı altı çizili yap */
+}
+
+/* Alert mesajlarındaki bağlantılar için hover efekti */
+.alert-danger a:hover {
+    text-decoration: none; /* Bağlantıya hover yapıldığında altı çizili olmasın */
+}
+
