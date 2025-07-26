@@ -1,0 +1,305 @@
+        /* Genel ayarlar */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f3f5f8;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            max-width: 100%;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            min-height: 80vh;
+        }
+
+        .aside {
+            flex: 0.4;
+            padding: 25px;
+            background: #f0f3f8;
+        }
+
+        .section {
+            flex: 1;
+            padding: 25px;
+            background: #ffffff;
+            border-left: 2px solid #f0f3f8;
+        }
+
+        .aside_paragraf {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .color_link {
+            text-decoration: none;
+            color: #007bff;
+            padding: 12px 10px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .color_link:hover {
+            background-color: #e7f1ff;
+            color: #004c99;
+        }
+
+        /* Ürün kartları */
+        .product-grid {
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-details {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-details h4 {
+            margin: 0 0 5px;
+            font-size: large;
+            color: red;
+        }
+
+        .product-details .owner {
+            color: #666;
+            font-size: 1.0em;
+            margin: 8px 0;
+        }
+
+        .product-details .info {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 0.95em;
+            color: #444;
+        }
+
+        .product-details .info span {
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .product-details .info span:hover {
+            background-color: #d1d1d1;
+        }
+
+        .ilan-islemler {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .ilan-islemler a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1em;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background-color: #e7f1ff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .ilan-islemler a.delete {
+            order: 1;
+            align-self: flex-start;
+            color: red !important;
+            background-color: #ffe7e7;
+        }
+
+        .ilan-islemler a.delete:hover {
+            background-color: #ffcccc;
+        }
+
+        .ilan-islemler a.edit {
+            order: 2;
+            align-self: flex-end;
+        }
+
+        .ilan-islemler a.edit:hover {
+            background-color: #cce5ff;
+        }
+
+        /* Responsive - Mobil için */
+        @media (max-width: 480px) {
+            body {
+                background-color: white !important;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .aside {
+                flex: none;
+                width: 100%;
+                padding: 15px;
+                border-bottom: 2px solid #f0f3f8;
+            }
+
+            .section {
+                flex: none;
+                width: 100%;
+                padding: 15px;
+                border-left: none;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+            }
+
+            .product-card {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+                transition: none;
+                flex-direction: column;
+            }
+
+            .img-container img {
+                height: 160px !important;
+                border-radius: 10px 10px 0 0;
+                object-fit: cover;
+                width: 100%;
+                display: block;
+            }
+
+            .product-details {
+                padding: 12px 15px;
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+            }
+
+            .product-details h4 {
+                font-size: 1.1rem;
+                margin-bottom: 6px;
+                color: red;
+            }
+
+            .product-details .owner {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+                color: #666;
+            }
+
+            .product-details .info {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 10px;
+                font-size: 0.85rem;
+                color: #444;
+                justify-content: flex-start;
+            }
+
+            .product-details .info span {
+                background-color: #f5f5f5;
+                padding: 5px 10px;
+                border-radius: 12px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+                transition: background-color 0.3s ease;
+                white-space: nowrap;
+            }
+
+            .product-details .info span:hover {
+                background-color: #ddd;
+            }
+
+            .ilan-islemler {
+                display: flex;
+                justify-content: space-between; /* Sil sola, Düzenle sağa */
+                padding: 10px 15px;
+                background-color: transparent !important;
+                border-top: none;
+                border-radius: 0 0 10px 10px;
+            }
+
+            .ilan-islemler a {
+                padding-left: 6px !important;
+                padding-right: 6px !important;
+                min-width: auto !important;
+                font-size: 0.95rem;
+                color: #007bff;
+                text-align: center;
+                border-radius: 8px;
+                background-color: #e7f1ff;
+                text-decoration: none;
+            }
+
+            .ilan-islemler a.delete {
+                order: 1;
+                align-self: flex-start;
+                color: red !important;
+                background-color: #ffe7e7;
+            }
+
+            .ilan-islemler a.delete:hover {
+                background-color: #ffcccc;
+            }
+
+            .ilan-islemler a.edit {
+                order: 2;
+                align-self: flex-end;
+            }
+
+            .ilan-islemler a.edit:hover {
+                background-color: #cce5ff;
+            }
+        }
+ 
