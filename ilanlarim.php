@@ -36,7 +36,7 @@ if (isset($_GET["id"])) {
 </head>
 <body>
     <?php include "views/_navbar.php"; ?>
-    <?php include "views/ilanlarim.php"; ?>
+    <?php include "views/duzenle.php"; ?>
     <div class="container">
         <div class="aside"> <!-- Soldaki Menü Kısmı -->
             <p class="aside_paragraf">Hesap Ayarları</p>
