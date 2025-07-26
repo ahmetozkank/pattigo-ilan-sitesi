@@ -83,38 +83,42 @@
     
 /*şehir ksımının */
 
-    .info {
+.info {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start; /* Daha sıkı hizalama için */
+    align-items: center; /* Yatayda ortala */
+    gap: 20px; /* Öğeler arasına boşluk */
     margin-top: 12px;
     font-size: 1em;
     color: #666;
     font-weight: bold;
-    background-color:rgb(255, 238, 238); /* Yumuşak krem arka plan */
+    background-color: rgb(255, 238, 238);
     border-radius: 15px;
     padding: 15px 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
-    transition: background-color 0.3s; /* Arka plan değişikliği için geçiş */
-
-    }
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+    
     .info:hover {
     background-color: #FFE4C4; /* Hover’da yumuşak geçişli krem rengi */
 }
 
  /* Şehir ve Yaş Tasarımı */
-/* Yaş ve Şehir Tasarımı */
 .location, .age {
-    display: inline-block;
-    color: #5A4C42; /* Sıcak kahve tonu */
+    display: flex; /* inline-block yerine flex */
+    align-items: center; /* Dikey ortalama */
+    color: #5A4C42;
     font-size: 0.95em;
     font-weight: bold;
-    text-transform: uppercase; /* Büyük harf */
-    margin: 0 10px; /* İki bilgi arasında mesafe */
+    text-transform: uppercase;
+    margin: 0; /* margin kaldırdım çünkü gap kullanıyoruz */
     position: relative;
     cursor: pointer;
     transition: color 0.3s ease;
 }
-
+.location {
+    padding-top: 4px; /* Sadece şehir (location) biraz aşağı iner */
+}
 .location:hover, .age:hover {
     color: #FF7A50; /* Hover'da canlı vurgu rengi */
 }
